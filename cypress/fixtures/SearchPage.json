@@ -1,0 +1,6 @@
+{
+    
+    "lblTotalResults" : "//div[@id='result-stats']",
+    "lblShowResultsFor" : "//div[@id='taw']//a[1]",
+    "lblSearchInsteadFor" : "//div[@id='taw']//a[2]"
+}

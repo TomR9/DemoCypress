@@ -2,20 +2,12 @@ import SearchPage from "./SearchPage"
 
 class GoogleHomePage{
 
-    txtSearch(){
-        return cy.xpath("//input[@title='Tìm kiếm']")
-    }
-
-    btnGoogleSearch(){
-        return cy.xpath("(//input[@name='btnK'])[2]")
-    }
-
     inputSearch(text){
-        this.txtSearch().clear().type(text)
+        cy.setText("GoogleHomePage", "txtSearch", text)
     }
 
     clickButtonSearch(){
-        this.btnGoogleSearch().click({force : true})
+        cy.getElement("GoogleHomePage", "btnGoogleSearch").click({multiple : true, force : true})
         return new SearchPage()
     }
 }

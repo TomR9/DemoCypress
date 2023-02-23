@@ -1,0 +1,5 @@
+{
+    "txtSearch" : "//input[@title='Tìm kiếm']",
+    "btnGoogleSearch" : "(//input[@name='btnK'])[2]"
+  }
+  
