@@ -40,3 +40,20 @@ Cypress.Commands.add('checkNum', (numberCheck, number) => {
 Cypress.Commands.add('checkText', (textCheck, text) => {
     assert(textCheck == text, "Correct text: " + textCheck)
 })
+
+Cypress.Commands.add('setText', (className, pathName, text) => {
+    const filePath = className + ".json"
+    cy.fixture(filePath).then((xpath) => {
+        var path = xpath[pathName]
+        cy.xpath(path).clear().type(text)
+    })
+    cy.log("Set text: " + text + " to " + pathName + " successfully")
+})
+
+Cypress.Commands.add('getElement', (className, pathName) => {
+    const filePath = className + ".json"
+    cy.fixture(filePath).then((xpath) => {
+        var path = xpath[pathName]
+        cy.xpath(path)
+    })
+})
